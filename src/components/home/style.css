@@ -1,0 +1,47 @@
+.me-avatar{
+    width: auto;
+    height:80vh; 
+}
+.headerTitle{
+    color: white;
+    font-family: 'Coda Caption', sans-serif;
+    font-size:6.9vw;
+    max-width:550px;
+    transition:0.5s;
+}
+.projectTitle{
+    font-family: 'Coda Caption', sans-serif;
+    color :white;
+    font-size:7vw;
+    transition:0.5s;
+    text-decoration: none;
+}
+.projectTitle:hover{
+    color: rgba(193, 203, 219, 0.6);
+}
+.projectCount{
+    font-size:10px;
+    font-family: 'Audiowide', cursive;
+    font-weight:bold; 
+    color: white;
+}
+#avatarTrigger {
+    color: #ff4081;
+    transition: 0.5s;
+}
+#avatarTrigger:hover{
+    transition: 0.3s;
+    width: 700px;
+    height: auto;
+    color: rgba(255, 64, 128,0.4);
+}
+#parallax {
+   background:#141414;
+   background-attachment: fixed;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size:700px;
+}
+#noParallax{
+    background:#141414;
+}
