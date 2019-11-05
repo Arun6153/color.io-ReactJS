@@ -1,32 +1,44 @@
 import React, { Component } from 'react';
 import { Grid, Cell, Content } from 'react-mdl';
 import './style.css';
-import ExamMS from './Projects Components/examManagementSystem';
-import ProSolution from './Projects Components/proSolution';
-import TheProblem from './Projects Components/theProblem';
-import Skycast from './Projects Components/skyCast';
 
 class Project extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            tabVal: 1
+            projectName:"",
+            items: [],
+            isLoaded: false,
         };
     }
-    setClickedComponent = (val) => {
-        this.setState({ tabVal: val });
+    componentDidMount() {
+        this.getProjects();
+    }
+    getProjects() {
+        fetch(`https://api.github.com/users/Arun6153/repos`)
+      .then(res => res.json())
+      .then((result) => {
+        this.setState({
+          items: result,
+          isLoaded: true,
+        });
+      }
+      );
+    }
+    displayItems() {
+        return this.state.items.map((item,index) => {
+            return (
+                <li className="circle-project" onClick={() => this.setClickedComponent(item.name)} > {item.name} <div className="div-effect"></div><div></div></li>
+                );
+            });
+        }
+        setClickedComponent = (val) => {
+            console.log(val);
+        this.setState({ projectName: val });
     }
     getClickedComponent = () => {
-        var check = this.state.tabVal;
-        if (check === 1) {
-            return <div > < ProSolution /> </div>;
-        } else if (check === 2) {
-            return <TheProblem />;
-        } else if (check === 3) {
-            return <Skycast />;
-        } else if (check === 4) {
-            return <ExamMS />;
-        }
+        var val = this.state.tabVal;
+            return val;
     }
     render() {
         return (
@@ -35,14 +47,7 @@ class Project extends Component {
                     <Cell col={1}></Cell>
                     <Cell col={10}>
                         <ul className="project-list">
-                            <li className="circle-project" onClick={() => this.setClickedComponent(1)} > Pro So!ution <div className="div-effect"></div></li>
-                            <div ></div>
-                            <li className="circle-project" onClick={() => this.setClickedComponent(2)} > The Problem  <div className="div-effect"></div></li>
-                            <div ></div>
-                            <li className="circle-project" onClick={() => this.setClickedComponent(3)} > SkyCast  <div className="div-effect"></div></li>
-                            <div ></div>
-                            <li className="circle-project" onClick={() => this.setClickedComponent(4)} > Exam Manag.Sys.  <div className="div-effect"></div></li>
-                            <div ></div>
+                            {this.displayItems()}
                         </ul> </Cell>
                     <Cell col={1}></Cell>
                 </Grid>
@@ -50,7 +55,7 @@ class Project extends Component {
                     <Cell col={1}></Cell>
                     <Cell className="project-description-content" col={10} >
                         <Content>
-                            {this.getClickedComponent()}
+                            <h1 style={{color:'white'}}>{this.getClickedComponent()}</h1>
                         </Content>
                     </Cell>
                     <Cell col={1}></Cell>
