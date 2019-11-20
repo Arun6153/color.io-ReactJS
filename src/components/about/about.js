@@ -3,6 +3,43 @@ import {Grid , Cell} from 'react-mdl';
 import './style.css';
 
 class About extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            name:"",
+            email:"",
+            message:"",
+            checkForm:"",
+            checkBool:false
+        }
+        // this.nameHandler = this.nameHandler.bind(this);
+        // this.emailHandler = this.emailHandler.bind(this);
+        // this.messageHandler = this.messageHandler.bind(this);
+    }
+    sendMessage = () =>{
+        
+        // let [ name , email , message] = this.state;
+        if(this.state.name !== "" && this.state.email !== "" && this.state.message !== "")
+        {
+            console.log("Hey");
+            this.setState({checkForm:"Your message has been sent! Now relax.",checkBool:true});
+        }
+        else{
+            this.setState({checkForm:"Form has'nt filled correctly!",checkBool:false});
+        }
+    }
+    nameHandler = (val) =>{
+        let v = val.target.value;
+        this.setState({name : v})
+    }
+    emailHandler = (val) =>{
+        let v = val.target.value;
+        this.setState({email : v})
+    }
+    messageHandler = (val) =>{
+        let v = val.target.value;
+        this.setState({ message : v})
+    }
     render(){
         return (
         <div className="main-div">
@@ -19,7 +56,7 @@ class About extends Component {
                 <div className="short-p">
                         <div className="theShort">The Short</div>
                         <p style={{fontWeight:'10px'}}>
-                            Arun Saini is a Dev[Developer] and Programmer. He is currently pursuing his Computer Science Bachelors degree in an Indian University. I am Specialized in full Stack web Developement and some Video Editing. 
+                            Arun Saini is a Dev[ Developer ] and Programmer. He is currently pursuing his Computer Science Bachelors degree in an Indian University. I am Specialized in full Stack web Developement and some Video Editing. 
                         </p>
                 </div>
                 <div className="short-p">
@@ -35,17 +72,18 @@ class About extends Component {
                     <form>
                         <div className="form-internal">
                             <label style={{width:'100%'}}>Name</label><br/>
-                            <input style={{width:'100%',border:'1 solid black',height:'25px',padding:'5px'}} type="text" placeholder="Enter your name here"/>
+                            <input style={{width:'100%',border:'1 solid black',height:'25px',padding:'5px'}} type="text"  onChange={this.nameHandler} value={this.state.name} placeholder="Enter your name here"/>
                         </div>
                         <div className="form-internal">
                             <label style={{width:'100%'}}>Email</label><br/>
-                            <input style={{width:'100%',border:'1 solid black',height:'25px',padding:'5px'}} type="email" placeholder="Enter your email"/>
+                            <input style={{width:'100%',border:'1 solid black',height:'25px',padding:'5px'}} type="email" onChange={this.emailHandler} value={this.state.email} placeholder="Enter your email"/>
                         </div>
                         <div className="form-internal">
                             <label style={{width:'100%'}}>Message</label><br/>
-                            <input style={{width:'100%',border:'1 solid black',height:'25px',padding:'5px'}} type="text" max="100" placeholder="Enter text ..."/>
+                            <input style={{width:'100%',border:'1 solid black',height:'25px',padding:'5px'}} type="text" max="100" onChange={this.messageHandler} value={this.state.message} placeholder="Enter text ..."/>
                         </div>
-                        <button className="form-btn">Submit</button>
+                        <div style={{color:(this.state.checkBool)? "green":"red"}}>{this.state.checkForm}</div>
+                        <button type="button" onClick={this.sendMessage} className="form-btn">Submit</button>
                     </form>
                 </Cell>
                 <Cell col={2}></Cell>

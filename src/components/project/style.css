@@ -17,7 +17,7 @@ body{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .custom-link {
@@ -66,7 +66,24 @@ h2{
     margin: auto;
     border:1px solid grey;
     margin-bottom:30px;
+    box-shadow: 0px 0px 20px 5px #61dafb;
 }
 .languages{
     list-style:none;
+}
+.project-description-content{
+    text-align:center;
+    margin-left:65px;
+}
+.ripple {
+  background-position: center;
+  transition: background 0.8s;
+}
+.ripple:hover {
+  background: aqua radial-gradient(circle, transparent 1%, aqua 1%) center/15000%;
+}
+.ripple:active {
+  background-color: #6eb9f7;
+  background-size: 100%;
+  transition: background 0s;
 }

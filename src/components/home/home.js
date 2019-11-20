@@ -39,8 +39,9 @@ returnPath=(bool,path)=>{
                 </Cell>
                 <Cell col={1}></Cell>
                 <Cell col={5} style={{minWidth:'300px'}}>
-                    <div style={{color:'white',textAlign:'justify',fontSize:'18px',transition:'0.5s'}}>
-                    I am a passionate developer looking to make an impact in this world. There are a few things that mean the most to me. My family, my friends, developing new things and doing my part in making this a better world. I'm currently seeking out the right team where I can work with other passionate individuals to build digital products that positively impact peoples lives. I believe in always exceeding expectations and continuously learning to be the best at my craft. This is a collection of Websites and Web Apps that help demonstrate my knowledge and abilities as a Web Developer.Hit me up, let's make something awesome!
+                    <div className="bio-header">
+                    I am a passionate developer looking to make an impact in this world. There are a few things that mean the most to me. My family, my friends, developing new things and doing my part in making this a better world. I'm currently seeking out the right team where I can work with other passionate individuals to build digital products that positively impact peoples lives. I believe in always exceeding expectations and continuously learning to be the best at my craft. This is a collection of Websites and Web Apps that help demonstrate my knowledge and abilities as a Web Developer.<br/><br/>
+                    <span style={{fontWeight:'bold',color:'grey'}}>Hit me up, let's make something awesome!</span>
                     </div>
                 </Cell>
                 <Cell col={1}></Cell>
@@ -50,8 +51,8 @@ returnPath=(bool,path)=>{
             <Grid className="projectIntent" style={{marginTop:' 150px'}}>
                 <Cell col={1}></Cell>
                 <Cell col={10}>
-                    <Grid style={{color:'white',fontSize:'10px'}}>FEATURED WORK :</Grid>
-                    <Grid className="projectCount">01</Grid>
+                    <Grid style={{color:'#ff4081',fontSize:'10px'}}>FEATURED WORK :</Grid>
+                    <Grid className="projectCount" style={{color:'#ff4081'}}>01</Grid>
                     <Grid></Grid>
                     <Grid  onMouseOver={()=>{this.backgroundImageToggle(true,"./img/1.png")}} onMouseLeave={()=>{this.backgroundImageToggle(false,"")}}>
                         <Link to="../project/project" className="projectTitle">PRO SOLUT!ON</Link>
@@ -65,7 +66,7 @@ returnPath=(bool,path)=>{
             <Grid className="projectIntent" style={{marginTop:' 50px'}}>
                 <Cell col={1}></Cell>
                 <Cell col={10}>
-                    <Grid className="projectCount">02</Grid>
+                    <Grid className="projectCount" style={{color:'#ff4081'}}>02</Grid>
                     <Grid></Grid>
                     <Grid  onMouseOver={()=>{this.backgroundImageToggle(true,"./img/2.png")}} onMouseLeave={()=>{this.backgroundImageToggle(false,"")}}>
                     <Link to="../project/project" className="projectTitle" >THE PROBLEM</Link>
@@ -79,7 +80,7 @@ returnPath=(bool,path)=>{
             <Grid className="projectIntent" style={{marginTop:' 50px'}}>
                 <Cell col={1}></Cell>
                 <Cell col={10}>
-                    <Grid className="projectCount">03</Grid>
+                    <Grid className="projectCount" style={{color:'#ff4081'}}>03</Grid>
                     <Grid></Grid>
                     <Grid onMouseOver={()=>{this.backgroundImageToggle(true,"./img/3.png")}} onMouseLeave={()=>{this.backgroundImageToggle(false,"")}}>
                     <Link to="../project/project" className="projectTitle" > SKYCAST</Link>
@@ -93,7 +94,7 @@ returnPath=(bool,path)=>{
             <Grid className="projectIntent" style={{marginTop:' 50px'}}>
                 <Cell col={1}></Cell>
                 <Cell col={10}>
-                    <Grid className="projectCount" >04</Grid>
+                    <Grid className="projectCount" style={{color:'#ff4081'}} >04</Grid>
                     <Grid></Grid>
                     <Grid onMouseOver={()=>{this.backgroundImageToggle(true,"./img/4.png")}} onMouseLeave={()=>{this.backgroundImageToggle(false,"")}}>
                     <Link to="../project/project" className="projectTitle">EXAM MANAG. SYS.</Link>

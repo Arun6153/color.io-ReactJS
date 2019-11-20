@@ -20,10 +20,7 @@
     color: rgba(193, 203, 219, 0.6);
 }
 .projectCount{
-    font-size:10px;
     font-family: 'Audiowide', cursive;
-    font-weight:bold; 
-    color: white;
 }
 #avatarTrigger {
     color: #ff4081;
@@ -45,4 +42,11 @@
 }
 #noParallax{
     background:#141414;
+}
+.bio-header{
+    color:white;
+    text-align:justify;
+    font-size:17px;
+    line-height:25px;
+    transition:0.5s;
 }

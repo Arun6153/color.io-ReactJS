@@ -9,7 +9,8 @@
 .col-header{
     color: white;
     font-family: 'Coda Caption', sans-serif;
-    font-size:2vw;
+    font-size:2em;
+    line-height: 40px;
     transition:0.5s;
     text-align: center;
     margin-bottom:0 ;
@@ -25,20 +26,18 @@
 }
 .short-p{
     padding-right:65px;
+    color: #61dafb;
 }
 .short-p p{
     text-align: justify;
-    font-size: 15x;
-}
-.theShort,.theLong:hover{
-    font-size: 30px;
-    height: 4vh;
-    transition: 0.3s;
-}
-.theShort:hover,.theLong{ 
     font-size: 15px;
-    transition: 0.3s;
+    color: white;
+}
+.theShort,.theLong{
+    font-size: 25px;
     height: 4vh;
+    transition: 0.3s;
+    color: #61dafb;
 }
 .form-internal{
    max-width:300px ;
