@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-checkOut my portfolio here - www.gray-scale.herokuapp.com
+checkOut my portfolio here - http://gray-scale.herokuapp.com/
 
 ## Available Scripts
 
